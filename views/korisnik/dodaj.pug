@@ -1,0 +1,50 @@
+extends ../layout
+block content 
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.min.css')
+    title 	
+    style.
+      .body { 
+        font-size: 19px;
+        color: red;
+      }
+  body.body
+    .container.col-lg-2.col-xs-12
+      .my-7
+        h3 Registracija
+      form(action='#' method='POST' name='forma')
+        .form-group
+          label(for='ime') Ime
+          input.form-control(type='text' name='ime' required='')
+        .form-group
+          label(for='prezime') Prezime
+          input.form-control(type='text' name='prezime' required='')
+        .form-group
+          label(for='email') Email adresa
+          input#inputEmail.form-control(type='email' name='email' required='')
+        .form-group
+          label(for='brojlicne') Broj licne karte
+          input.form-control(type='text' name='brojlicne' required='')
+        .form-group
+          label(for='datumrodjenja') Datum rodjenja
+          input.form-control(type='date' name='datumrodjenja' required='')
+        .form-group
+          label(for='jmbg') JMBG
+          input.form-control(type='text' name='jmbg' required='')
+        .form-group
+          label(for='telefon') Broj telefona
+          input.form-control(type='text' name='telefon' required='')
+        .form-group
+          label(for='tipnaloga') Tip naloga
+          select.form-control(name='tipnaloga')
+            option(selected='' disabled='') --Izaberite--
+            option(value='bibliotekar') Bibliotekar
+            option(value='korisnik') Korisnik
+        .form-group
+          label(for='lozinka') Lozinka
+          input#inputPassword.form-control(type='password' name='lozinka' value='****' required='')
+        input.btn.btn-primary(type='submit' role='button' value='Sacuvaj\
+        ')
+    script(src='../public/js/bootstrap.js')

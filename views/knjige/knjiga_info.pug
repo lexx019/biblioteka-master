@@ -1,0 +1,78 @@
+extends ../layout
+block content
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Page Title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.css')
+    style.
+      .body { 
+        font-size: 19px;
+        color: red;
+      }
+  body.body
+    .container.mt-0
+        .row
+            .col-4
+                table.table.body
+                    thead
+                        tr
+                        th(scope='row')
+                            h4 Informacije o knjizi
+                    tbody
+                        tr
+                        th(scope='row') Ime knjige
+                        td=knjiga.ime
+                        tr
+                        th(scope='row') Autor knjige
+                        td=knjiga.imeAutora
+                        tr
+                        th(scope='row') Broj primeraka
+                        td=knjiga.broj_primeraka
+        .row
+            .col-12
+                table.table.table.table-hover.table-dark
+                    thead.thead-dark
+                        tr
+                            th(scope='col') #
+                            th(scope='col') Broj knjige
+                            th(scope='col') Ime korisnika
+                            th(scope='col') Datum iznajmljivanja
+                            th(scope='col') Datum vracanja
+                            th(scope='col') Akcija
+                    -var red=1;
+                    tbody
+                        each primerak in primerci
+                            -var klasa='';
+
+                            if primerak.kasni=='1'
+                                -klasa='bg-danger'
+                            tr(class=klasa)
+                                td=red++
+                                    td=primerak.id
+                                    if primerak.ime_korisnika
+                                        td=(primerak.ime_korisnika+' '+primerak.prezime_korisnika+'('+primerak.idKorisnika+')')
+                                    else 
+                                        td='/'
+                                    if primerak.datumUzimanja  && primerak.datumUzimanja!='00.00.0000.'
+                                        td=primerak.datumUzimanja
+                                    else 
+                                        td='/'
+                                    if primerak.datumVracanja  && primerak.datumVracanja!='00.00.0000.'
+                                        td=primerak.datumVracanja
+                                    else 
+                                        td='/'
+                                    td
+                                        if !primerak.ime_korisnika
+                                            a.btn.btn-primary(href='/bibliotekar/iznajmi/'+primerak.id)
+                                                |Iznajmi
+                                        else 
+                                            a.btn.btn-success(href='/bibliotekar/vrati_potvrda/'+primerak.id)
+                                                |Vrati
+                                        |&nbsp;&nbsp;&nbsp;
+                                        form.d-inline(action='/primerci_knjige/obrisi/'+primerak.id method='POST' name='forma')
+                                            input.btn.btn-warning(type='submit' value='Obrisi')
+
+                        

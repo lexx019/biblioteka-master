@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css">
+
+	<title>	</title>
+</head>
+
+<body>
+
+<div class="container col-lg-2 col-xs-12">
+      <div class="my-5">       
+	<h3>Registracija</h3>
+			</div>
+	<form action="#" method="POST" name="forma">
+		
+				<div class="form-group">
+					<label for="ime">Ime</label>
+					<input type="text" name="ime" class="form-control" required>
+				</div>
+				<div class="form-group">
+					<label for="prezime">Prezime</label>
+					<input type="text" name="prezime" class="form-control" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="email">Email adresa</label>
+					<input type="email" name="email" id="inputEmail" class="form-control" required>
+				</div>
+
+				<div class="form-group">
+					<label for="brojlicne">Broj licne karte</label>
+					<input type="text" name="brojlicne"  class="form-control" required>
+				</div>
+
+				<div class="form-group">
+					<label for="datumrodjenja">Datum rodjenja</label>
+					<input type="date" name="datumrodjenja"  class="form-control" required>
+				</div>
+
+				<div class="form-group">
+					<label for="jmbg">JMBG</label>
+					<input type="text" name="jmbg"  class="form-control" required>
+				</div>
+
+				<div class="form-group">
+					<label for="telefon">Broj telefona</label>
+					<input type="text" name="telefon"  class="form-control" required>
+				</div>
+
+				
+				<div class="form-group">
+					<label for="tipnaloga">Tip naloga</label>
+					<select name="tipnaloga" class="form-control">
+						<option selected disabled>--Izaberite--</option>
+						<option value="bibliotekar">Bibliotekar</option>
+						<option value="korisnik">Korisnik</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="lozinka">Lozinka</label>
+					<input type="password" name="lozinka" id="inputPassword" class="form-control" value="****" required>
+				</div>
+				<input type="submit" class="btn btn-primary" role="button" value="Sacuvaj
+				">
+			</form>
+	    </div>
+	</div>
+</div>
+
+
+<script src="../public/js/bootstrap.js"></script>
+</body>
+</html>

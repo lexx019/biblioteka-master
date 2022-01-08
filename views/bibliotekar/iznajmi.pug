@@ -1,0 +1,55 @@
+extends ../layout
+block content
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.css')
+    title
+    style.
+      .login-form {
+      width: 340px;
+      margin: 50px auto;
+      font-size: 15px;
+      }
+      .login-form form {
+      margin-bottom: 15px;
+      background: #f7f7f7;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      }
+      .login-form h2 {
+      margin: 0 0 15px;
+      }
+      .form-control, .btn {
+      min-height: 38px;
+      border-radius: 2px;
+      }
+      .btn {
+      font-size: 15px;
+      font-weight: bold;
+      }
+  body
+    .bg-image(style="background-image: url('/slike/login2.jpg');height: 100vh")
+      .container
+        .row.justify-content-center.my
+          .col-lg-6.col-xs-12
+            if greska
+                .alert.alert-danger=greska
+            if uspesno
+                .alert.alert-success=uspesno
+            form.login-form(action='/bibliotekar/iznajmi' method='POST')
+              .form-group
+                label(style='color:#FF0000')
+                  h4 Broj clanske karte
+                input#knjiga.form-control(type='text' name='broj_clanske_karte' required='')
+              .form-group
+                label(style='color:#FF0000')
+                  h4 Broj knjige
+                
+                if !id_primerka_knjige
+                  input#korisnik.form-control(type='text' name='broj_knjige' required='')
+                else 
+                  input#korisnik.form-control(type='text' name='broj_knjige' value=id_primerka_knjige required='' readonly)
+              input.btn.btn-danger(type='submit' role='button' value='Iznajmi')
+    script(src='../public/js/bootstrap.js')

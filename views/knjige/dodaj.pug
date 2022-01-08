@@ -1,0 +1,33 @@
+extends ../layout
+block content 
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.min.css')
+    title 	
+    style.
+      .body { 
+        font-size: 19px;
+        color: red;
+      }
+  body.body
+    .container.col-lg-2.col-xs-12
+      .my-7
+        h3 Dodaj knjigu
+      form(action='/knjige/dodaj' method='POST' name='forma')
+        .form-group
+          label(for='ime') Ime knjige
+          input.form-control(type='text' name='ime' required='')
+        .form-group
+          label(for='ime_autora') Ime autora
+          input.form-control(type='text' name='ime_autora' required='')
+        .form-group
+          label(for='zanr') Zanr
+          select.form-control(name='zanr')
+            each zanr in zanrovi 
+              option(value=zanr.idKategorije)=zanr.zanr
+        .form-group
+          label(for='broj_primeraka') Broj primeraka
+          input.form-control(type='text' name='broj_primeraka' required='')
+        input.btn.btn-primary(type='submit' role='button' value='Dodaj')
+    

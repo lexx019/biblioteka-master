@@ -1,0 +1,85 @@
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' type='text/css' href='/css/navbar.css')
+  link(rel='stylesheet' type='text/css' href='/css/bootstrap.min.css')
+  link(rel='stylesheet' type='text/css' href='/css/bootstrap.min.css')
+  link(rel='stylesheet' type='text/css' href='/css/all.css')
+body    
+    nav.navbar.navbar-expand-custom.navbar-mainbg
+      a.navbar-brand.navbar-logo(href='#')
+        h1
+          i.fas.fa-book-open
+      button.navbar-toggler(type='button' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        i.fas.fa-bars.text-white
+      if locals.tip_naloga=='bibliotekar'
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            .hori-selector
+              .left
+              .right
+            if trenutna=='knjige'
+              li.nav-item(class='active')
+                a.nav-link(href='../knjige')
+                  i.fas.fa-book
+                  | &nbsp;Knjige
+            else
+              li.nav-item
+                a.nav-link(href='../knjige')
+                  i.fas.fa-book
+                  | &nbsp;Knjige
+            if trenutna=='registracija'
+              li.nav-item(class='active')
+                a.nav-link(href='javascript:void(0);')
+                  i.fas.fa-book
+                  | &nbsp;Registruj korisnika
+            else
+              li.nav-item
+                a.nav-link(href='../korisnik/dodaj')
+                  i.fas.fa-book
+                  | &nbsp;Registruj korisnika
+            if trenutna=='kdodaj'      
+              li.nav-item(class='active')
+                a.nav-link(href='../knjige/dodaj')
+                  i.fas.fa-plus
+                  i.fas.fa-book
+                  | &nbsp;Dodaj knjige
+            else 
+              li.nav-item
+                a.nav-link(href='../knjige/dodaj')
+                  i.fas.fa-plus
+                  i.fas.fa-book
+                  | &nbsp;Dodaj knjige
+            if trenutna=='iznajmi'
+              li.nav-item(class='active')
+                a.nav-link(href='../bibliotekar/iznajmi')
+                  i.fas.fa-file-import
+                  | &nbsp;Iznajmi
+            else 
+              li.nav-item
+                a.nav-link(href='../bibliotekar/iznajmi')
+                  i.fas.fa-file-import
+                  | &nbsp;Iznajmi  
+            li.nav-item
+              a.nav-link(href='/logout')
+                i.fas.fa-book
+                | &nbsp;
+      else 
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+              .hori-selector
+                .left
+                .right
+              li.nav-item
+                a.nav-link(href='/logout')
+                  i.fas.fa-book
+                  | &nbsp;
+         
+    .bg-image(style="background-image: url('/slike/login2.jpg');height: 200vh")
+
+        block content
+    script(src='/js/jquery_3.6.0.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/navbar.js')
+    script(src='/js/all.js')
+    

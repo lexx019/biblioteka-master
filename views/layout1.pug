@@ -1,0 +1,49 @@
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' type='text/css' href='/css/navbar.css')
+  link(rel='stylesheet' type='text/css' href='/css/bootstrap.min.css')
+  link(rel='stylesheet' type='text/css' href='/css/bootstrap.min.css')
+  link(rel='stylesheet' type='text/css' href='/css/all.css')
+body 
+     
+    nav.navbar.navbar-expand-custom.navbar-mainbg
+      a.navbar-brand.navbar-logo(href='#')
+        h1
+          i.fas.fa-book-open
+      button.navbar-toggler(type='button' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        i.fas.fa-bars.text-white
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          .hori-selector
+            .left
+            .right
+          li.nav-item
+            a.nav-link(href='javascript:void(0);')
+              i.fas.fa-book
+              | &nbsp;Knjige
+          li.nav-item.active
+            a.nav-link(href='javascript:void(0);')
+              i.fas.fa-user-plus
+              | &nbsp;Registruj novog korisnika
+          li.nav-item
+            a.nav-link(href='javascript:void(0);')
+              i.fas.fa-plus
+              i.fas.fa-book
+              | &nbsp;Dodaj knjige
+          li.nav-item
+            a.nav-link(href='javascript:void(0);')
+              i.fas.fa-file-import
+              | &nbsp;Iznajmi
+          li.nav-item
+            a.nav-link(href='javascript:void(0);')
+              i.fas.fa-sign-out-alt
+              | &nbsp;Logout
+    .bg-image(style="background-image: url('/slike/login2.jpg');height: 200vh")
+
+        block content
+    script(src='/js/jquery_3.6.0.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/navbar.js')
+    script(src='/js/all.js')
+    

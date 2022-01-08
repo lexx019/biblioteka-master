@@ -1,0 +1,58 @@
+extends ../layout
+block content
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Page Title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.css')
+  body
+    .container.mt-0
+      .row-3
+        .col-6
+          table.table.table-hover.table-dark
+            tbody
+              tr
+                th(scope='row')
+                  h4 Informacije o korisniku 
+            tbody
+              tr
+                th(scope='row') Ime
+                td=primerak_knjige.ime_korisnika
+              tr
+                th(scope='row') Prezime
+                td=primerak_knjige.prezime_korisnika
+              tr
+                th(scope='row') Broj licne karte
+                td=primerak_knjige.brojlicne
+              tr
+                th(scope='row') Broj telefona
+                td=primerak_knjige.telefon
+              tr
+                th(scope='row') Email
+                td=primerak_knjige.email
+              tr
+                th(scope='row') Datum rodjenja
+                td=primerak_knjige.datumrodjenja
+              tr
+                th(scope='row') JMBG
+                td=primerak_knjige.jmbg
+          table.table.table-hover.table-dark
+            tbody
+              tr
+                th(scope='row')
+                  h4 Informacije o knjizi
+            tbody
+              tr
+                th(scope='row') Ime knjige
+                td=primerak_knjige.ime
+              tr
+                th(scope='row') Ime autora
+                td=primerak_knjige.imeAutora
+              tr
+                th(scope='row') Zanr
+                td=primerak_knjige.zanr
+          form(action='/bibliotekar/vrati_potvrda/'+primerak_knjige.id method='POST' name='forma')
+            input.btn.btn-primary(type='submit' value="Vrati")
+        script(src='../public/js/bootstrap.js')

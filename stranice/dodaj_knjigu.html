@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css">
+
+	<title>	</title>
+</head>
+
+<body>
+
+<div class="container col-lg-2 col-xs-12">
+      <div class="my-5">       
+	<h3>Dodaj knjigu</h3>
+			</div>
+	<form action="#" method="POST" name="forma">
+		
+				<div class="form-group">
+					<label for="ime">Ime knjige</label>
+					<input type="text" name="ime" class="form-control" required>
+				</div>
+				<div class="form-group">
+					<label for="prezime">Ime autora</label>
+					<input type="text" name="prezime" class="form-control" required>
+				</div>
+				<div class="form-group">
+					<label for="zanr">Tip naloga</label>
+					<select name="zanr" class="form-control">
+						<option selected disabled>--Izaberite zanr--</option>
+						<option value="horor">horor</option>
+						<option value="triler">trilerk</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="brojPrimeraka">Broj primeraka</label>
+					<input type="text" name="brojPrimeraka"  class="form-control" required>
+				</div>
+
+				<input type="submit" class="btn btn-primary" role="button" value="Dodaj">
+			</form>
+	    </div>
+	</div>
+</div>
+
+
+<script src="../public/js/bootstrap.js"></script>
+</body>
+</html>

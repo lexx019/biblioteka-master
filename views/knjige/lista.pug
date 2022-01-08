@@ -1,0 +1,31 @@
+extends ../layout
+block content 
+    .container.mt-0
+        .row
+            table.table.table.table-hover.table-dark
+                thead.thead-dark
+                    tr
+                    th(scope='col') #
+                    th(scope='col') Ime
+                    th(scope='col') Ime autora
+                    th(scope='col') Zanr
+                    th(scope='col') Broj primeraka
+                    if locals.tip_naloga=='bibliotekar'
+                        th(scope='col') Akcija
+                -var red=1;
+                tbody
+                    each knjiga in knjige
+                        tr 
+                            td=red++
+                            td=knjiga.ime
+                            td=knjiga.imeAutora
+                            td=knjiga.zanr
+                            td=knjiga.broj_primeraka
+                            td
+                                if locals.tip_naloga=='bibliotekar'
+                                    a.btn.btn-warning(href='/knjige/info/'+knjiga.idKnjige)
+                                        |Info
+                                    |&nbsp;&nbsp;&nbsp;
+                                    form.d-inline(action='/knjige/obrisi/'+knjiga.idKnjige method='POST' name='forma')
+                                        input.btn.btn-danger(type='submit' value='Obrisi')
+    

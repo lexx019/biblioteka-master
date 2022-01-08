@@ -1,0 +1,53 @@
+extends ../layout
+block content
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Page Title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='../public/css/bootstrap.css')
+    style.
+      .body { 
+        font-size: 19px;
+        color: red;
+      }
+  body.body
+    .container.mt-0
+        .row
+            .col-12
+                table.table.table.table-hover.table-dark
+                    thead.thead-dark
+                        tr
+                            th(scope='col') #
+                            th(scope='col') Naziv knjige
+                            th(scope='col') Ime autora
+                            th(scope='col') Datum iznajmljivanja
+                            th(scope='col') Datum vracanja
+                    -var red=1;
+                    tbody
+                        each primerak in primerci
+                            -var klasa='';
+
+                            if primerak.kasni=='1'
+                                -klasa='bg-danger'
+                            tr(class=klasa)
+                                td=red++
+                                    if primerak.ime
+                                        td=(primerak.ime)
+                                    else 
+                                        td='/'
+                                    if primerak.imeAutora
+                                        td=(primerak.imeAutora)
+                                    else 
+                                        td='/'
+                                    if primerak.datumUzimanja && primerak.datumUzimanja!='00.00.0000.'
+                                        td=primerak.datumUzimanja
+                                    else 
+                                        td='/'
+                                    if primerak.datumVracanja && primerak.datumVracanja!='00.00.0000.'
+                                        td=primerak.datumVracanja
+                                    else 
+                                        td='/'
+
+                        
