@@ -31,24 +31,22 @@ body
             if trenutna=='registracija'
               li.nav-item(class='active')
                 a.nav-link(href='javascript:void(0);')
-                  i.fas.fa-book
+                  i.fas.fa-user
                   | &nbsp;Registruj korisnika
             else
               li.nav-item
                 a.nav-link(href='../korisnik/dodaj')
-                  i.fas.fa-book
+                  i.fas.fa-user
                   | &nbsp;Registruj korisnika
             if trenutna=='kdodaj'      
               li.nav-item(class='active')
                 a.nav-link(href='../knjige/dodaj')
-                  i.fas.fa-plus
-                  i.fas.fa-book
+                  i.fas.fa-book-medical
                   | &nbsp;Dodaj knjige
             else 
               li.nav-item
                 a.nav-link(href='../knjige/dodaj')
-                  i.fas.fa-plus
-                  i.fas.fa-book
+                  i.fas.fa-book-medical
                   | &nbsp;Dodaj knjige
             if trenutna=='iznajmi'
               li.nav-item(class='active')
@@ -62,7 +60,7 @@ body
                   | &nbsp;Iznajmi  
             li.nav-item
               a.nav-link(href='/logout')
-                i.fas.fa-book
+                i.fas.fa-sign-out-alt
                 | &nbsp;
       else 
         #navbarSupportedContent.collapse.navbar-collapse
@@ -72,7 +70,7 @@ body
                 .right
               li.nav-item
                 a.nav-link(href='/logout')
-                  i.fas.fa-book
+                  i.fas.fa-sign-out-alt
                   | &nbsp;
          
     .bg-image(style="background-image: url('/slike/login2.jpg');height: 200vh")
